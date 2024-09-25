@@ -2,12 +2,13 @@ Loose=False
 print("Bonjour et bienvenue dans la fôret enchantée")
 print("Tu te trouve face à deux chemins : \n\tChemin 1 : Un sentier sombre où tu entends des bruits inquiétants.\n\tChemin 2 : Un sentier éclairé par des lucioles, plus calme.")
 
-#premier mouvement
+#Entrée dans la fôret
+
 premier_mvt=int(input("Par quel chemin souhaitez vous passer ?"))
 if premier_mvt == 1:
     print("\nTu avances prudemment, mais tu entends un bruit étrange venant des arbres.\n")
     
-    # Rencontre avec le danger bruit
+    # Rencontre avec le danger (bruit)
     
     print("Tu te trouve face à deux choix : \n\tChoix 1 : Tu t'arrêtes et cherches à identifier la source du bruit. \n\tChoix 2 : Tu continues à avancer rapidement en espérant que cela ne te suive pas.")
     
@@ -19,7 +20,7 @@ if premier_mvt == 1:
     elif mvt_bruit == 2:
         print("\nBonne décision ! Tu as évité le piège et tu continues ton chemin.")
 
-    # Rencontre avec le danger loup-garou
+    # Rencontre avec le danger (loup-garou)
     
 elif premier_mvt == 2:
     print("\nTu marches tranquillement, mais soudain, un loup-garou apparaît.\n")
@@ -35,6 +36,7 @@ elif premier_mvt == 2:
 
 
 #La rivière magique :
+
 if Loose!=True :
     print("\nAprès avoir évité le danger, tu arrives devant une rivière. Deux options s'offrent à toi :\n\tOption 1 : Traverser la rivière à la nage. \n\tOption 2 : Suivre la rivière en espérant trouver un pont plus loin.")
     mvt_riviere=int(input("Quel choix souhaitez vous faire ?"))
@@ -46,6 +48,7 @@ if Loose!=True :
 
 
 #Le pont maudit
+
 if Loose!=True :
     print("Tu arrives finalement à un vieux pont en bois, mais une étrange créature apparaît et te dit que tu dois résoudre une énigme pour traverser.")
     print("L'énigme est la suivante : \"Je suis léger comme une plume, mais personne ne peut me tenir longtemps. Qui suis-je ?\"")
@@ -56,6 +59,9 @@ if Loose!=True :
     elif reponse_enigme==2 or reponse_enigme==3:
         print("\nMauvaise réponse. La créature te jette dans la rivière et tu échoues.")
         Loose=True
+
+
+#Sortie de la fôret
 
 if Loose!=True :
     print("\nAprès avoir traversé le pont, tu aperçois enfin la sortie de la forêt. \nCependant, un dernier choix crucial s'impose :")
