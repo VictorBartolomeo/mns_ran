@@ -1,0 +1,92 @@
+/*
+#main-title {
+    background-color: rgb(0, 133, 200);
+}
+
+h2 {
+    font-weight: bold;
+}
+
+
+a {
+    color: rgb(100, 100, 0)
+}
+
+p.intro {
+    font-style: italic;
+}
+
+section.special {
+    border: 1px solid black;
+}
+
+nav>li {
+    margin-top: 20px;
+}
+
+nav li:last-of-type {
+    color: rgb(245, 0, 0);
+}
+
+h2+p {
+    text-shadow: goldenrod 0 0 10px;
+}
+
+a:hover {
+    color: rgb(63, 6, 177);
+}
+
+a[href^="https"] {
+    background-color: rgba(165, 165, 165, 0.608);
+}
+
+h2::before {
+    content: "TP1 CSS : "
+}
+
+a[href*="contact"] {
+    background-color: rgba(0, 153, 255, 0.466);
+}
+
+nav li:nth-child(2) {
+    color: yellow;
+}
+
+p:not(.intro) {
+    font-size: 10px;
+}
+
+section[class*="article"] {
+    border: black 2px solid;
+}
+
+section:first-of-type p {
+    background-color: rgba(82, 82, 0, 0.218);
+}
+
+section[class*="article"] p:first-of-type {
+    color: blue;
+}
+
+footer {
+    padding: 10px;
+}
+
+nav>ul>li:first-child {
+    border: 5px solid black;
+    font-size: 5px;
+}
+
+
+h1:hover {
+    color: blue;
+}
+*/
+
+.special p:first-of-type {
+    background-color: blue;
+}
+
+nav ul li:first-child a {
+    border: 5px solid black;
+}
