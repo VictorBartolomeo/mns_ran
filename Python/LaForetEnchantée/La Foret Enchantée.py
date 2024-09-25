@@ -1,25 +1,30 @@
 Loose=False
 print("Bonjour et bienvenue dans la fôret enchantée")
-print("Vous vous trouvez face à deux chemins : \n\tChemin 1 : Un sentier sombre où tu entends des bruits inquiétants.\n\tChemin 2 : Un sentier éclairé par des lucioles, plus calme.")
+print("Tu te trouve face à deux chemins : \n\tChemin 1 : Un sentier sombre où tu entends des bruits inquiétants.\n\tChemin 2 : Un sentier éclairé par des lucioles, plus calme.")
 
 #premier mouvement
 premier_mvt=int(input("Par quel chemin souhaitez vous passer ?"))
-if premier_mvt ==1:
+if premier_mvt == 1:
     print("\nTu avances prudemment, mais tu entends un bruit étrange venant des arbres.\n")
+    
     # Rencontre avec le danger bruit
+    
     print("Tu te trouve face à deux choix : \n\tChoix 1 : Tu t'arrêtes et cherches à identifier la source du bruit. \n\tChoix 2 : Tu continues à avancer rapidement en espérant que cela ne te suive pas.")
     mvt_bruit=input("Quel choix souhaitez vous faire ?")
-    if mvt_bruit ==1 :
+    if mvt_bruit == 1 :
         print("\nC'était un piège ! Un groupe de brigands t'attrape et te vole tout ce que tu possèdes. Tu as échoué !")
         Loose=True
     elif mvt_bruit == 2:
         print("\nBonne décision ! Tu as évité le piège et tu continues ton chemin.")
+
+    # Rencontre avec le danger loup-garou
+    
 elif premier_mvt == 2:
     print("\nTu marches tranquillement, mais soudain, un loup-garou apparaît.\n")
-    # Rencontre avec le danger loup-garou
+    
     print("Tu te trouves face à deux choix : \n\tChoix 1 : Courir vers un grand arbre pour te cacher.\n\tChoix 2 : Te battre avec une épée que tu trouves par terre.")
     mvt_loup_garou=int(input("Quel choix souhaitez vous faire ?"))
-    if mvt_loup_garou ==1 :
+    if mvt_loup_garou == 1 :
         print("\nMalheureusement, le loup-garou te rattrape. Tu n'as pas été assez rapide. Fin de l'aventure.")
         Loose=True
     elif mvt_loup_garou ==2 :
@@ -27,18 +32,18 @@ elif premier_mvt == 2:
 
 
 #La rivière magique :
-if Loose!=True:
-    print("Après avoir évité le danger, tu arrives devant une rivière. Deux options s'offrent à toi :\n\t Option 1 : Traverser la rivière à la nage. \n\tOption 2 : Suivre la rivière en espérant trouver un pont plus loin.")
+if Loose!=True and (premier_mvt ==1 or premier_mvt == 2):
+    print("\nAprès avoir évité le danger, tu arrives devant une rivière. Deux options s'offrent à toi :\n\tOption 1 : Traverser la rivière à la nage. \n\tOption 2 : Suivre la rivière en espérant trouver un pont plus loin.")
     mvt_riviere=int(input("Quel choix souhaitez vous faire ?"))
-    if mvt_riviere ==1 :
+    if mvt_riviere == 1 :
         print("Mauvais choix. L'eau de la rivière est empoisonnée. Fin de l'aventure.")
         Loose=True
-    elif mvt_riviere ==2 :
+    elif mvt_riviere == 2 :
         print("Bravo ! Tu trouves un pont après quelques minutes de marche.")
 
 
 #Le pont maudit
-if Loose!=True:
+if Loose!=True and (mvt_riviere ==1 or mvt_riviere == 2):
     print("Tu arrives finalement à un vieux pont en bois, mais une étrange créature apparaît et te dit que tu dois résoudre une énigme pour traverser.")
     print("L'énigme est la suivante : \"Je suis léger comme une plume, mais personne ne peut me tenir longtemps. Qui suis-je ?\"")
     print("\t Réponse 1 : \"Le souffle.\"")
@@ -51,7 +56,7 @@ if Loose!=True:
         print("Mauvaise réponse. La créature te jette dans la rivière et tu échoues.")
         Loose=True
 
-if Loose!=True:
+if Loose!=True and (reponse_enigme==1 or reponse_enigme==2):
     print("Après avoir traversé le pont, tu aperçois enfin la sortie de la forêt. \nCependant, un dernier choix crucial s'impose :")
     print("\tOption 1 : Prendre un raccourci à travers un champ de fleurs toxiques.\n\t Option 2 : Suivre le sentier principal, plus long mais sûr.")
     mvt_sortie=int(input("Quelle est votre choix ?"))
