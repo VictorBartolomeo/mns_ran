@@ -1,0 +1,136 @@
+L'Évasion de la Tour Maudite
+Contexte :
+Tu es un aventurier emprisonné dans une tour maudite, où des énigmes et des pièges
+complexes t'attendent à chaque étage. Ton objectif est de t'échapper de la tour en atteignant
+son sommet. Pour cela, tu devras résoudre des énigmes et prendre des décisions
+stratégiques. Tes choix seront déterminants pour ta survie et ta libération.
+Tu dois écrire un programme qui simule cette aventure, en utilisant des conditions plus
+complexes, comme des comparaisons multiples ( and , or ) et des conditions imbriquées.
+Scénario détaillé :
+1. Début de l'aventure – Le choix de l'arme :
+Dès le début de ton aventure, tu trouves trois armes différentes dans ta cellule :
+Une épée rouillée.
+Une baguette magique abîmée.
+Un bouclier en bois.
+Le programme doit demander à l'utilisateur de choisir une arme parmi ces trois objets :
+Si l'utilisateur choisit l'épée, il aura une attaque puissante mais peu de défense.
+Si l'utilisateur choisit la baguette, il pourra utiliser des sorts mais ils sont
+imprévisibles.
+Si l'utilisateur choisit le bouclier, il aura une grande défense mais peu de capacité
+d'attaque.
+Les statistiques de départ sont les suivantes :
+Épée : attaque = 10, défense = 2
+Baguette : attaque = 6, défense = 5
+Bouclier : attaque = 3, défense = 8
+Ces valeurs détermineront les résultats des combats à venir.
+2. Premier étage – La porte verrouillée :
+Après avoir pris ton arme, tu montes au premier étage et trouves une porte fermée.
+Trois mécanismes sont disponibles pour l'ouvrir :
+Mécanisme 1 : Résoudre une énigme mathématique (si la réponse est correcte, la
+porte s'ouvre).
+Mécanisme 2 : Forcer la porte avec ton arme (la réussite dépend de ton arme).
+Mécanisme 3 : Tenter de trouver une clé cachée dans la pièce (la clé est cachée,
+il faut de la chance pour la trouver).
+Le programme doit demander à l'utilisateur de choisir l'un des trois mécanismes, avec
+des conditions pour chaque option :
+Si l'utilisateur choisit de résoudre l'énigme (Mécanisme 1) :
+Il doit résoudre une équation simple du type : "Combien font 8 + 3 * 2 ?". Si la
+réponse est correcte, la porte s'ouvre. Sinon, le piège s'active, et l'aventure se
+termine.
+Si l'utilisateur choisit de forcer la porte (Mécanisme 2) :
+La réussite dépend de son arme :
+Si l'utilisateur a l'épée, il a 50 % de chances d'ouvrir la porte.
+Si l'utilisateur a le bouclier, il échoue automatiquement (car le bouclier n'est
+pas une arme offensive).
+Si l'utilisateur a la baguette, il a 30 % de chances de réussir (parce que la
+magie est instable).
+Si l'utilisateur choisit de chercher la clé (Mécanisme 3) :
+Il a 40 % de chances de la trouver. Si l'utilisateur ne la trouve pas, un piège
+s'active.
+3. Deuxième étage – Combat contre un garde spectral :
+
+
+Tu arrives au deuxième étage et fais face à un garde spectral. Le programme doit
+comparer tes statistiques d'attaque et de défense à celles du garde pour déterminer
+l'issue du combat :
+Le garde spectral a une attaque de 8 et une défense de 6.
+Les règles du combat sont les suivantes :
+Si ton attaque est supérieure à la défense du garde, tu le blesses et tu passes au
+prochain étage.
+Si ta défense est supérieure à l'attaque du garde, il ne peut pas te blesser, mais
+tu dois trouver une autre solution pour t'en sortir (comme fuir).
+Si ni ton attaque ni ta défense ne sont supérieures, tu perds le combat et
+l'aventure se termine.
+
+Conditions complexes :
+
+Si tu as l'épée, ta grande attaque te permet de blesser le garde immédiatement.
+Si tu as le bouclier, ta grande défense te permet de résister, mais tu ne pourras
+pas vaincre le garde sans trouver une autre stratégie.
+Si tu as la baguette, tu dois lancer un sort magique aléatoire : il peut soit doubler
+ton attaque pour ce combat, soit échouer.
+
+4. Troisième étage – La salle du miroir magique :
+Au troisième étage, tu rencontres un miroir magique qui te pose une énigme et t'offre
+trois choix en fonction de ta réponse. L'énigme est la suivante :
+"Je suis toujours devant toi, mais tu ne peux jamais me dépasser. Qui suis-je ?"
+Trois réponses sont proposées :
+Réponse 1 : "Le futur".
+Réponse 2 : "Le chemin".
+Réponse 3 : "Ton ombre".
+Le programme doit utiliser des conditions imbriquées pour gérer les conséquences :
+Si l'utilisateur choisit "Le futur" (Réponse 1) :
+Le miroir lui montre un futur dangereux, et il doit faire demi-tour. Fin de l'aventure.
+Si l'utilisateur choisit "Le chemin" (Réponse 2) :
+Le miroir l'ouvre et il continue son aventure.
+Si l'utilisateur choisit "Ton ombre" (Réponse 3) :
+Le miroir l'emprisonne dans une boucle temporelle, et l'aventure échoue.
+5. Dernier étage – Le gardien du sommet :
+Au sommet de la tour, tu fais face au Gardien du Sommet, un puissant sorcier qui te
+lance un défi.
+Il te demande de choisir une porte parmi trois :
+Porte 1 : Une porte enflammée.
+Porte 2 : Une porte gelée.
+Porte 3 : Une porte d'ombre.
+Selon l'arme que tu as choisie au début, les résultats varient :
+Si tu as l'épée : Tu peux traverser la porte enflammée sans te blesser. Si tu
+as le bouclier : Tu peux te protéger du froid et traverser la porte gelée. Si tu
+as la baguette : Tu peux dissiper l'ombre et traverser la porte d'ombre.
+Si tu choisis la bonne porte en fonction de ton arme, tu t'échappes de la tour et tu
+gagnes. Si tu fais le mauvais choix, tu es emprisonné pour toujours dans la tour.
+Exemple de structure Python avec conditions complexes :
+# Début de l'aventure : choix de l'arme
+print("Bienvenue dans la tour maudite.")
+print("Choisis une arme pour commencer ton aventure :")
+print("1. Épée rouillée\n2. Baguette magique abîmée\n3. Bouclier en bois") arme = int(input("Fais
+ton choix (1, 2, ou 3) : "))
+# Initialisation des statistiques selon l'arme choisie
+if arme == 1:
+attaque = 10
+defense = 2
+print("Tu as choisi l'épée. Attaque puissante, faible défense.") elif arme == 2:
+attaque = 6
+defense = 5
+print("Tu as choisi la baguette. Magie instable.")
+elif arme == 3:
+attaque = 3
+defense = 8
+print("Tu as choisi le bouclier. Grande défense, faible attaque.")
+# Premier étage : la porte verrouillée
+print("\nTu arrives à une porte fermée avec trois mécanismes pour l'ouvrir.")
+print("1. Résoudre une énigme\n2. Forcer la porte avec ton arme\n3. Chercher une clé")
+mecanisme = int(input("Quel mécanisme choisis-tu (1, 2, ou 3) ? "))
+if mecanisme == 1:
+reponse = int(input("Combien font 8 + 3 * 2 ? "))
+if reponse == 14:
+print("Bonne réponse ! La porte s'ouvre.")
+else:
+print("Mauvaise réponse. Le piège s'active. Fin de l'aventure.") elif mecanisme == 2:
+if arme == 1: # Épée
+print("Tu forces la porte avec l'épée.")
+# Résultat aléatoire (par exemple)
+# Ajouter une logique de hasard ici
+elif arme == 3: # Bouclier
+print("Le bouclier ne peut pas forcer la porte. Fin de l'aventure.") # Compléter les autres
+conditions pour la baguette...
+# Continuer le scénario avec d'autres étages...
