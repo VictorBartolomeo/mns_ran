@@ -10,11 +10,4 @@ for personne in notes:
     moyenne=sum(note_personne)/len(note_personne)
     print(f"{personne[0]} a {moyenne:.2f} de moyenne")
 
-ON CODE MARIO OU QUOI ?
-Go faire le nouveau Facebook, à nous les millions !
-
-
-J'ai poney déso
-
-Actuellement je sais faire un jeu avec une foret
 
