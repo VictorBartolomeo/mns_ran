@@ -1,0 +1,141 @@
+body{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.bandeau{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.bandeau_left{
+    display: flex;
+    grid-row: 1;
+}
+
+nav{
+    display: flex;
+    grid-row: 1;
+    width: fit-content;
+    flex-grow: inherit;
+}
+
+.bandeau_right {
+    display: inline-block;
+    grid-row: 1;
+    column-width: 300px;
+    max-width: 300px;
+    max-height: 200px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+
+}
+section{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.section_info h2{
+    text-align: center;
+}
+
+.card_container{
+    width: 400px;
+    border: 1px solid black;
+    padding: 10px;
+    gap: 10px;
+    flex: 1 1 auto;
+}
+.card_container img{
+    float: left;
+}
+.card_container button{
+    display: inline;
+}
+.card_container :not p{
+    .card_container img{
+        width: 100%;
+    }
+    .card_container button{
+        z-index: 10;
+    }
+    .card_container h3{
+        z-index: 10;
+    }
+}
+
+@media screen and (width<900px){
+    section{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .card_container{width=100%}
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 10px;
+    padding: 20px;
+}
+.footer_left h3,.footer_middle h3{
+    text-align: center;
+}
+
+.footer_left{
+    flex-grow: 1.5;
+    gap: 10px;
+    width: 350px;
+    border: 1px solid black;
+}
+.footer_middle{
+    width: 200px;
+    border: 1px solid black;
+    flex-shrink: 1;
+}
+.footer_middle li{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.sponsors_container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.footer_right{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex-basis: 150px;
+    width: 150px;
+    height: 80px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.footer_left img {
+    border-radius: 45%;
+}
+.footer_right img{
+    border-radius: 45%;
+}
+.social{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+}
