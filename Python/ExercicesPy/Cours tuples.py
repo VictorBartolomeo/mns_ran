@@ -1,12 +1,32 @@
-from ctypes.wintypes import PUSHORT
+class PersonnedeLaClasse :
+    prenom=""
+    nom=""
+    age= 18
 
-notes=(("franck",(5,14,8)),
-    ("tom",(1,14,18)),
-    ("Didier", (12,18,20)),
-)
+    def __init__(self, prenom, nom, age):
+        self.prenom=prenom
+        self.nom=nom
+        self.age=age
 
-for personne in notes:
-    note_personne=personne[1]
-    moyenne=sum(note_personne)/len(note_personne)
-    print(f"{personne[0]} a {moyenne:.2f} de moyenne")
+    def isMajeur(self):
+        return self.age >=18
 
+    def bonjour(self, civilite="M.):
+        return f"bonjour {civilite}.{self.nom.upper()} {self.prenom.capitalize()},"
+
+prof = PersonnedeLaClasse()
+prof.prenom="Franck"
+prof.nom="Bansept"
+prof.age=37
+
+etudiant = PersonnedeLaClasse()
+etudiant.prenom="john"
+etudiant.nom="doe"
+
+
+print(prof.bonjour("M"))
+
+prof= Personne("franck","bansept",37)
+etudiant= Personne("john","doe", 25)
+
+print(prof.bonjour("Pr"))
