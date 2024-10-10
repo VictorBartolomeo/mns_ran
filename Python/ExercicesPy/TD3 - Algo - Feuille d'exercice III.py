@@ -1,25 +1,25 @@
 #1. Dé ASCII
-import random
-
-faceDuDe=random.randint(1,6)
-
-if faceDuDe==1:
-    print("\n\t0\n")
-
-if faceDuDe==2:
-    print("0\n\n\t\t0")
-
-if faceDuDe==3:
-    print("0\n\t0\n\t\t0")
-
-if faceDuDe==4:
-    print("0\t\t0\n\n0\t\t0")
-
-if faceDuDe==5:
-    print("0\t\t0\n\t0\n0\t\t0")
-
-if faceDuDe==6:
-    print("0\t0\n0\t0\n0\t0")
+# import random
+#
+# faceDuDe=random.randint(1,6)
+#
+# if faceDuDe==1:
+#     print("\n\t0\n")
+#
+# if faceDuDe==2:
+#     print("0\n\n\t\t0")
+#
+# if faceDuDe==3:
+#     print("0\n\t0\n\t\t0")
+#
+# if faceDuDe==4:
+#     print("0\t\t0\n\n0\t\t0")
+#
+# if faceDuDe==5:
+#     print("0\t\t0\n\t0\n0\t\t0")
+#
+# if faceDuDe==6:
+#     print("0\t0\n0\t0\n0\t0")
 
 #2. Jours.
 
@@ -74,7 +74,95 @@ if faceDuDe==6:
 
 #4. Pas d'une boucle
 
-for i in range(int(input("Borne de départ : ")),int(input("Borne d'arrivée : "))+1,int(input("Pas d'incrément : "))):
-    print(i)
+# for i in range(int(input("Borne de départ : ")),int(input("Borne d'arrivée : "))+1,int(input("Pas d'incrément : "))):
+#     print(i)
 
-#5. 
+#5. On se propose de calculer la moyenne des notes d’un élève pour certaines matières ; français,  maths, géographie et informatique.
+# Pour chacune de ces matières, il faudra saisir un coefficient de pondération compris entre 1 et 10.  Calculez la moyenne en tenant compte des coefficients de pondération.
+# Affichez une appréciation :
+# Si la moyenne est comprise entre 16 et 20, la mention est « Très bien ».
+# Si la moyenne est comprise entre 12 et 16, la mention est « Bien ».
+# Si la moyenne est comprise entre 8 et 12, la mention est « Assez bien ».
+# Si la moyenne est comprise entre 4 et 8, la mention est « Insuffisant ».
+# Si la moyenne est comprise entre 0 et 4, la mention est « Nul ».
+# Il faut contrôler que les notes sont comprises entre 0 et 20 et que les coefficients sont compris  entre 1 et 10.
+
+# erreur=False
+# class Matiere :
+#     note=""
+#     coef=""
+#
+# def erreurSaisie(self,note,coef):
+#     self.note=note
+#     self.coef=coef
+#     if self.note in range (1,21) and self.coef in range(1,11):
+#         return self.note
+#         return self.coef
+#         erreur=False
+#     else:
+#         erreur=True
+#         print("Erreur de saisie")
+#
+# while erreur==False:
+# français=Matiere()
+# français.note=int(input("Saisir la note de français: "))
+# français.coef=int(input("Saisir le coefficient du français: "))
+#
+# if not erreur:
+#     maths=Matiere()
+#     maths.note=int(input("Saisir la note de maths: "))
+#     maths.coef=int(input("Saisir le coefficient du maths: "))
+# else:
+#     print("ici")
+#
+# geographie=Matiere()
+# geographie.note=int(input("Saisir la note de geographie: "))
+# geographie.coef=int(input("Saisir le coefficient du geographie: "))
+#
+# informatique=Matiere()
+# informatique.note=int(input("Saisir la note de informatique: "))
+# informatique.coef=int(input("Saisir le coefficient du informatique: "))
+#
+#
+#
+# moyenne=((français.note*français.coef)+(maths.note*maths.coef)+(geographie.note*geographie.coef)+(informatique.note*informatique.coef))/(français.coef+maths.coef+geographie.coef+informatique.coef)
+#
+# if 0<moyenne<=4:
+#     print(f"Avec une moyenne de {moyenne}, vous obtenez la mention \"Nul\"")
+# if 5<moyenne<=8:
+#     print(f"Avec une moyenne de {moyenne} vous obtenez la mention \"Insuffisant\"")
+# if 9<moyenne<=12:
+#     print(f"Avec une moyenne de {moyenne} vous obtenez la mention \"Assez bien\"")
+# if 12<moyenne<=16:
+#     print(f"Avec une moyenne de {moyenne} vous obtenez la mention \"Bien\"")
+# if 16<moyenne<=20:
+#     print(f"Avec une moyenne de {moyenne} vous obtenez la mention \"Très bien\"")
+# else:
+#     print("valeur en erreur")
+
+
+#6.Écrivez un algorithme qui convertisse un nombre de la base 10 vers la base 2 (en binaire).  Le principe utilisé est celui de la division entière.
+# Prenons le chiffre 19 pour le convertir en base 2.
+# La division entière de 19 par 2 donne un quotient de 9 et un reste de 1.
+# La division entière de 9 par 2 donne un quotient de 4 et un reste de 1.
+# Plaçons les restes dans l’ordre inverse de leur apparition, nous obtenons « 11 ».  La division de 4 par 2 donne un quotient de 2 et un reste de 0.
+# L’accumulation des restes donne « 011 ».
+# La division de 2 par 2 donne un quotient de 1 et un reste de 0.
+# L’accumulation des restes donne « 0011 ».
+# La division de 1 par 2 donne un quotient de 0 et un reste de 1.
+# L’accumulation des restes donne « 10011 ».
+# La conversion s’arrête là et le chiffre 19 converti en base 2 est « 10011 »
+
+nbConvert=int(input("Veuillez entrer un nombre à convertir : "))
+decimal=nbConvert
+bin=""
+
+if nbConvert ==0:
+    bin="0"
+else:
+    while decimal > 0:
+        reste= decimal % 2
+        bin=str(reste)+bin
+        decimal//=2
+
+print(f"{nbConvert} en binaire est {bin}")
