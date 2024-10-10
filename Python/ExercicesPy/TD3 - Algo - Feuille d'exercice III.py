@@ -153,16 +153,80 @@
 # L’accumulation des restes donne « 10011 ».
 # La conversion s’arrête là et le chiffre 19 converti en base 2 est « 10011 »
 
-nbConvert=int(input("Veuillez entrer un nombre à convertir : "))
-decimal=nbConvert
-bin=""
+# nbConvert=int(input("Veuillez entrer un nombre à convertir : "))
+# decimal=nbConvert
+# bin=""
+#
+# if nbConvert ==0:
+#     bin="0"
+# else:
+#     while decimal > 0:
+#         reste= decimal % 2
+#         bin=str(reste)+bin
+#         decimal//=2
+#
+# print(f"{nbConvert} en binaire est {bin}")
 
-if nbConvert ==0:
-    bin="0"
-else:
-    while decimal > 0:
-        reste= decimal % 2
-        bin=str(reste)+bin
-        decimal//=2
+#7. Écrivez l’algorithme qui affiche à l’écran les lignes suivantes :
+# 10 11 12 13 14 15
+# 20 21 22 23 24 25
+# 30 31 32 33 34 35
+# 40 41 42 43 44 45
+# 50 51 52 53 54 55
+# i=0
+# for i in range (1,6):
+#     for n in range (1,6):
+#         print(f"{i}{n} ", end="")
+#     print("")
 
-print(f"{nbConvert} en binaire est {bin}")
+#8.L’élève placé au fond de la classe, près du radiateur, est le meilleur de la classe.
+# Pour tuer le temps,  il décide de plier une feuille en deux puis en deux, puis… en deux, puis…
+# Écrivez un algorithme  qui calcule l’épaisseur du pliage final à partir du nombre de plis et de l’épaisseur initiale de la  feuille.
+
+# import math (finalement non...)
+# epaisseurInitiale=int(input("Veuillez entrer l'épaisseur de la page en mm: "))
+# epaisseurFinale=epaisseurInitiale
+# nbPliages=int(input("Veuillez entrer le nombre de pliages effectué sur la feuille : "))
+#
+# for nbPliages in range(1,nbPliages+1):
+#     epaisseurFinale+=epaisseurFinale
+#
+# print(f"Avec une épaisseur de {epaisseurInitiale}mm et {nbPliages} pliages en deux, il en résulte une épaisseur de {epaisseurFinale}mm")
+
+#9.Une pointe est constituée d’une tête symbolisée par le caractère « _ » et d’une tige symbolisée par le caractère « | ».
+# La dimension d’une pointe est la longueur de sa tige, qui correspond au nombre de  caractères « | » présents.
+# Ainsi :
+# _
+# |
+# |
+# |
+# |
+# est une pointe de dimension 4.
+# L’objectif est d’afficher des pointes d’une dimension donnée.
+# Écrire un algorithme affichant p pointes (côte à côte) de dimension d.
+
+# d=int(input("Veuillez entrer la dimension de/des flêche.s : "))
+# p=int(input("Combien de pointes souhaitez-vous ? : "))
+#
+# for p in range(1,p+1):
+#     print("_\t", end="")
+# for d in range (1,d+1):
+#     print()
+#     for p in range(1,p+1):
+#         print("|\t", end="")
+
+# 10.Écrire un algorithme qui demande successivement 20 nombres à l’utilisateur, et qui lui dise ensuite  quel était le plus grand parmi ces 20 nombres.
+nbMax=int
+nbDemande=0
+while nbDemande<2:
+    nbDemande+=1
+    nbUser=int(input(f"[{nbDemande}]Saisissez un nombre: "))
+    if nbUser>nbMax:
+        nbMax=nbUser
+    else:
+        pass
+
+print(f"Le nombre le plus haut que vous ayez saisi est le {nbMax}")
+
+
+
