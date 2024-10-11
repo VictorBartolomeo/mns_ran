@@ -9,3 +9,4 @@ for personnage in liste_personnage:
     cumul_pv+=personnage[1]
 
 print(cumul_pv/len(liste_personnage))
+
