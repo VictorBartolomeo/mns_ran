@@ -33,22 +33,23 @@ class Livre:
         print(f"Publication: {self.annee_de_publication}")
         print(f"Disponible: {self.disponible}")
 
+    def afficher_titre(self):
+        print(self.titre)
+
     def emprunter(self):
-        choixEmprunt = str(input("Veuillez écrire le nom du livre à emprunter: "))
-
-        if self.disponible(choixEmprunt):
-            print(f"Le livre {self.nom} vous a été reservé et n'est plus disponible à la réservation.")
+        if self.disponible:
+            print(f"Le livre {self.titre} vous a été reservé et n'est plus disponible à la réservation.")
             self.disponible = False
-
-        else:
-            print(f"Le livre {self.nom} est déjà emprunté en ce moment. Vous ne pouvez l'emprunter")
+        elif self.disponible == False:
+            print(f"Le livre {self.titre} est déjà emprunté en ce moment. Vous ne pouvez l'emprunter")
 
     def retourner(self):
         if not self.disponible:
-            print(f"Le livre {self.nom} a été remis à la réservation. Merci pour la restitution !")
+            print(f"Le livre {self.titre} a été remis à la réservation. Merci pour la restitution !")
             self.disponible = True
-        else:
-            print(f"Le livre {self.nom} est déjà en rayon et disponible.")
+        elif self.disponible:
+            print(
+                f"Le livre {self.titre} est déjà en rayon. Soit ce livre n'est pas le notre, soit vous nous l'avez volé.")
 
 
 class Bibliotheque():
@@ -57,66 +58,95 @@ class Bibliotheque():
         self.liste_livres = liste_livres
 
     def ajouter_livre(self):
-        self.liste_livres.append((
+        self.liste_livres.append(Livre(
             str(input("Titre: ")),
-             str(input("Auteur: ")),
-             int(input("Publication: ")),
-             True))
+            str(input("Auteur: ")),
+            int(input("Publication: ")),
+            True))
 
     def comptage_livre(self):
-        print(f"Il y a {len(self.liste_livres)} références dans notre bibliotheque.")
+        nbDispo = 0
+        for livre in self.liste_livres:
+            if livre.disponible:
+                nbDispo += 1
+        print(
+            f"Il y a {len(self.liste_livres)} références dans notre bibliothèque. Parmi lesquels {nbDispo} sont disponibles.")
 
-    def afficher_livre(self):
-        print(PlaceHolder)
+    def emprunter_livre(self):
+        choixEmprunt = str(input("Veuillez écrire le nom du livre à emprunter: "))
+        presenceLivre = False
+        for livre in self.liste_livres:
+            if livre.titre == choixEmprunt:
+                livre.emprunter()
+                presenceLivre = True
+        if presenceLivre == False:
+            print(f"Le livre {choixEmprunt} n'existe pas dans la base de donnée.")
+
+    def retourner_livre(self):
+        choixRetour = str(input("Veuillez écrire le titre du livre que vous souhaitez restituer: "))
+        presenceLivre = False
+        for livre in self.liste_livres:
+            if livre.titre == choixRetour:
+                livre.retourner()
+                presenceLivre = True
+        if presenceLivre == False:
+            print(f"Le livre {choixRetour} n'existe pas dans la base de donnée.")
+
+    def afficher_disponibles(self):
+        for livre in self.liste_livres:
+            if livre.disponible:
+                print(livre.afficher_titre())
+            else:
+                pass
 
 
 livre1 = Livre("Le Seigneur des Anneaux", "John Reuel Ronald Tolkien", 1954, True)
-livre2 = Livre("Orgueil et Préjugés", "Jane Austen", 1813, True)
+livre2 = Livre("Orgueil et Préjugés", "Jane Austen", 1813, False)
 livre3 = Livre("1984", "George Orwell", 1949, False)
 livre4 = Livre("Harry Potter I", "JK Rowling", 1997, True)
 
 histler_Even = Bibliotheque(liste_livres=[livre1, livre2, livre3, livre4])
 
-choixMenu=int
-try:
-    while choixMenu != 0:
-        print("MENU:")
-        print("1. Ajouter un livre")
-        print("2. Afficher un ou tous les livres")
-        print("3. Compter le nombre de livres")
-        print("5. Emprunter un livre")
-        print("6. Retourner un livre")
-        print("\n 0 = QUITTER")
-        choixMenu = int(input("Veuillez choisir une option"))
-        if choixMenu == 1:
-            histler_Even.ajouter_livre()
+choixMenu = int
+while choixMenu != 0:
+    print("MENU:")
+    print("1. Ajouter un livre.")
+    print("2. Afficher un ou tous les livres.")
+    print("3. Nos références et disponibilités.")
+    print("4. Emprunter un livre")
+    print("5. Retourner un livre")
+    print("\n 0 = QUITTER")
+
+    choixMenu = int(input("\nVeuillez choisir une option :"))
+
+    if choixMenu == 1:
+        histler_Even.ajouter_livre()
+        for livre in histler_Even.liste_livres:
+            livre.afficher_info()
+            print("")
+
+    if choixMenu == 2:
+        menuRecherche = int(input("Souhaitez vous voir un livre en particulier (1) ou tous les livres (2)? : "))
+        if menuRecherche == 1:
+            livreRecherche = str(input("Veuillez entrer le titre du livre : "))
+            for livre in histler_Even.liste_livres:
+                if livre.titre == livreRecherche:
+                    print("")
+                    livre.afficher_info()
+        if menuRecherche == 2:
             for livre in histler_Even.liste_livres:
                 livre.afficher_info()
                 print("")
-
-        if choixMenu == 2:
-            menuRecherche=int(input("Souhaitez vous voir un livre en particulier (1) ou tous les livres (2)? : "))
-            if menuRecherche==1:
-                livreRecherche = str(input("Veuillez entrer le titre du livre : "))
-                for livre in histler_Even.liste_livres:
-                    try:
-                        if livre.titre == livreRecherche:
-                            print("")
-                            livre.afficher_info()
-                    except:
-                        print("Impossible de trouver le livre.")
-            if menuRecherche==2:
-                for livre in histler_Even.liste_livres:
-                    livre.afficher_info()
-                    print("")
-        if choixMenu == 3:
-            histler_Even.comptage_livre()
-        if choixMenu == 5:
-            livre.emprunter()
-        if choixMenu == 6:
-            livre.retourner()
+    if choixMenu == 3:
+        histler_Even.comptage_livre()
+        choixRef = str(input("\nVoulez-vous voir les références disponibles ? y/n : "))
+        if choixRef == "y":
+            histler_Even.afficher_disponibles()
         else:
             pass
-
-except ValueError:
-    None
+    if choixMenu == 4:
+        histler_Even.emprunter_livre()
+    if choixMenu == 5:
+        histler_Even.retourner_livre()
+    else:
+        pass
