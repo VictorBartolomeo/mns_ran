@@ -38,14 +38,64 @@ class Liste:
             nb_suppr=nb_suppr.suivant
         nb_suppr.suivant=nb_suppr.suivant.suivant
 
-    # retourne une nouvelle liste qui contient les éléments de l'index de début à l'index de fin (ex: 5,8 => renvoie une nouvelle liste avec 5,6,7,8)
-    def sous_tableau (self, index_debut, index_fin):
+    def sous_liste (self, index_debut, index_fin):
+        nouvelle_liste=Liste()
+        index=0
+        avancement=self.premier_element
+        while avancement is not None:
+            if index_debut <= index <= index_fin:
+                nouvelle_liste.ajout(avancement.valeur)
+            else:
+                pass
+            avancement=avancement.suivant
+            index+=1
+        return nouvelle_liste
 
-        self.afficher_tout()
+    def ajouter_a_chacun_des_elements(self, operation):
+        liste_ajout=[]
+        avancement = self.premier_element
+        while avancement is not None:
+            nouvelle_valeur=operation(avancement.valeur)
+            liste_ajout.append(nouvelle_valeur)
+            avancement = avancement.suivant
+        return liste_ajout
+
+    # def donne_inverse(self):
+    #     nouvelle_liste = Liste()
+    #     avancement = self.premier_element
+    #     while avancement is not None:
+    #         nouvelle_liste.ajout_au_debut(avancement.valeur)  # Ajoute chaque élément au début de la nouvelle liste
+    #         avancement = avancement.suivant
+    #     return nouvelle_liste
+    #
+    # def ajout_au_debut(self, valeur_element):
+    #     nouvel_element = Element(valeur_element)
+    #     if self.premier_element is None:
+    #         self.premier_element = nouvel_element
+    #         self.dernier_element = nouvel_element
+    #     else:
+    #         nouvel_element.suivant = self.premier_element
+    #         self.premier_element = nouvel_element
+
+
+    def afficher_inverse(self, avancement=None):
+        if avancement is None:
+            avancement=self.premier_element
+        if avancement is not None:
+            if avancement.suivant is not None:
+                self.afficher_inverse(avancement.suivant)
+        print(avancement.valeur)
+
+        if avancement is None:
+            print(self.premier_element)
+        avancement=avancement.suivant
+
+    def inverse(self):
+        #franchement j'ai pas trouvé
 
 
 
-ma_meilleur_liste=Liste(3,5)
+
 
 ma_liste = Liste()
 
@@ -57,6 +107,3 @@ ma_liste.ajout(14)
 ma_liste.ajout(84)
 ma_liste.ajout(79)
 ma_liste.ajout(44)
-
-ma_liste.supprimer_element(2)
-ma_liste.afficher_tout()
