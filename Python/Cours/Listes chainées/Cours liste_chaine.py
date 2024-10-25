@@ -1,3 +1,6 @@
+from typing import Any
+
+
 class Element:
     def __init__(self, valeur):
         self.valeur = valeur
@@ -90,8 +93,8 @@ class Liste:
             print(self.premier_element)
         avancement=avancement.suivant
 
-    def inverse(self):
-        #franchement j'ai pas trouvé
+    # def inverse(self):
+    #     #franchement j'ai pas trouvé
 
 
 
