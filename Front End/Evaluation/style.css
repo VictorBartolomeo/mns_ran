@@ -1,0 +1,73 @@
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.rupture::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "EN RUPTURE!";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: red;
+    font-size: 50px;
+    font-weight: bold;
+    transform: rotateX(45deg);
+    top: 0px;
+    left: 0px;
+    padding: 0;
+}
+
+
+
+.solde::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "SOLDE !";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(239, 39, 39);
+    color: yellow;
+    top: -30px;
+    right: 0px;
+
+}
+
+.fourimg img:nth-child(2), .fourimg img:nth-child(3) {
+    border-radius: 50% !important;
+}
+
+.socialIcons i {
+    font-size: 50px;
+    cursor: pointer;
+    transition: all ease 0.5s;
+}
+
+.socialIcons i:hover {
+    transform: scale(1.2);
+}
+
+.headerIcons i {
+    font-size: 35px;
+    cursor: pointer;
+    transition: all ease 0.5s;
+}
+
+.headerIcons i:hover {
+    transform: scale(1.2);
+}
+
+.container_article:hover {
+    transition: all ease 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.rupture>.container_article {
+    box-shadow: none;
+    background-color: rgba(217, 0, 0, 0.28);
+}
