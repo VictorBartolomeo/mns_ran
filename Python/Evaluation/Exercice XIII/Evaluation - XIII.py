@@ -81,11 +81,10 @@ while jouer:  # Boucle de jeu
         try:
             play_again = str(input("Voulez-vous rejouer ? (Y/n) "))
             #J'aurai pu utiliser la méthode .strip() et .lower() pour contraindre la réponse, mais on va pas surcharger.
-            if play_again in "nN, non, NON":
+            if play_again in ("nN", "non", "NON"):
                 jouer = False
-
                 break
-            if play_again in "yY, yes, YES" or play_again == "":
+            if play_again in ("yY", "yes", "YES", ""):
                 break
                 # print("Ca fonctionne")
             else:

@@ -70,7 +70,7 @@ class JeuDesBaton: #classe du jeu en lui-même servant à tous les évènements 
                     if play_again in ("n", "no"):
                         jouer = False
                         break
-                    elif play_again in ("y", "yes", ""):
+                    elif play_again in ("y", "yes", "YES", ""):
                         break
                     else:
                         print("Veuillez saisir 'Y' ou 'n'.")
