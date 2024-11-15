@@ -1,6 +1,6 @@
 #12. Classe Animal et ses sous-classes Chien et Chat
 
-
+#test push
 class Animal:
     def __init__(self, nom):
         self.nom = nom
