@@ -103,6 +103,12 @@ def social_engineering_cyber():
         error_social_engineering+=1
     else:
            print("Élève MNS : Ah, d'accord !")
+    print("Élève MNS : Je n'arrive pas à accéder à mon PC, tu peux me donner ton ID s'il te plait pour que je puisse me connecter ?.")
+    if input("Entrez une réponse")==reponse_nathalie_ID:
+        print("Élève MNS : Merci beaucoup! Je vais pouvoir me connecter maintenant.")
+        error_social_engineering+=1
+    else:
+       print("Élève MNS : D'accord, je vais demander à quelqu'un d'autre.")
     print("Élève MNS : Bon hé bien je te laisse")
     print("user.name : D'accord, à plus tard!")
 
@@ -113,11 +119,12 @@ def social_engineering_cyber():
     enigme_cyber_3=True
 
 if enigme_cyber_3==True:
+   
 #pygame clic sur le bloc Phishing
 
 def phishing_cyber():
    #images des mails
-   
+
 
 
   
